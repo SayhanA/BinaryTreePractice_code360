@@ -45,8 +45,7 @@ Node* input() {
 }
 
 int calculateDiameter(Node* root, int& diameter) {
-    if (root == NULL)
-        return 0;
+    if (root == NULL) return 0;
 
     int leftHeight = calculateDiameter(root->left, diameter);
     int rightHeight = calculateDiameter(root->right, diameter);
