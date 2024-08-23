@@ -110,7 +110,6 @@ int nodeLevel(Node *root, int search)
 {
     if(root == NULL) return 0;
     if(root->val == search) return 1; 
-    // if(root->left->val == search || root->right->val == search) return 2;
 
     int l = nodeLevel(root->left, search);
     if(l) return l+1;
@@ -128,11 +127,5 @@ int main()
     int n;
     cin >> n;
     cout << nodeLevel(root, n);
-
-    // print(root);
-    // cout << endl;
-    // cout << "Leaf Nodes:" << count_leaf(root) << endl;
-    // cout << "Maximum Height" << maxHeight(root) << endl;
-
     return 0;
 }
