@@ -99,15 +99,13 @@ void print(Node *root)
 //             if (i == 0)
 //             {
 //                 v.push_back(tmp->val);
-//                 // cout << tmp->val << endl;
 //             }
-//             if (tmp->left)
-//             {
+//             if (tmp->left != NULL) {
 //                 q.push(tmp->left);
-//                 cout << tmp->left->val << endl;
 //             }
-//             if (tmp->right)
+//             if (tmp->right != NULL) {
 //                 q.push(tmp->right);
+//             }
 //         }
 //     }
 
@@ -115,25 +113,23 @@ void print(Node *root)
 // }
 
 vector<int> getLeftView(Node *root) {
-    vector<int> result; // To store the left view nodes
+    vector<int> result;
     if (root == NULL) return result;
 
     queue<Node *> q;
     q.push(root);
 
     while (!q.empty()) {
-        int n = q.size(); // Number of nodes at the current level
-
+        int n = q.size();
         for (int i = 0; i < n; i++) {
             Node *curr = q.front();
             q.pop();
 
-            // If this is the first node of the current level
+            
             if (i == 0) {
                 result.push_back(curr->val);
             }
 
-            // Push left and right children to the queue
             if (curr->left != NULL) {
                 q.push(curr->left);
             }
